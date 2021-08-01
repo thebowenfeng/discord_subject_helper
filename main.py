@@ -1,14 +1,10 @@
-import nnfs
-from nnfs.datasets import spiral_data
 from network import NeuralNetwork
 from dense_layer import DenseLayer
 from functions.activation_functions import RectifiedLinear, Softmax
 from functions.loss_functions import CategoricalCrossEntropy
 from functions.optimizer_functions import AdaptiveMomentum
 
-nnfs.init()
-
-data, classification = spiral_data(samples=100, classes=3)
+#data, classification = spiral_data(samples=100, classes=3)
 
 nn = NeuralNetwork(
     epochs=100001,
@@ -28,4 +24,4 @@ nn.add(DenseLayer(
     activation=Softmax
 ))
 
-nn.train(data, classification, one_hot=False)
+#nn.train(data, classification, one_hot=False)
